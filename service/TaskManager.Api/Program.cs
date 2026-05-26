@@ -1,4 +1,6 @@
 using System.Text.Json.Serialization;
+using TaskManager.Api.Repositories;
+using TaskManager.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
         options.JsonSerializerOptions.Converters.Add(
             new JsonStringEnumConverter());
     });
+
+builder.Services.AddSingleton<TaskRepository>();
+builder.Services.AddScoped<TaskService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
