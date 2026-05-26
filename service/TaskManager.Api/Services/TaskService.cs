@@ -21,4 +21,9 @@ public class TaskService
     {
         return _taskRepository.GetById(id);
     }
+
+    public IReadOnlyCollection<TaskItem> GetAllTasks()
+    {
+        return _taskRepository.GetAll();
+    }
 }

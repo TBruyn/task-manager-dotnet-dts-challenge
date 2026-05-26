@@ -44,6 +44,13 @@ public class TasksController : ControllerBase
         {
             return NotFound();
         }
+
         return Ok(task);
+    }
+
+    [HttpGet]
+    public ActionResult<IReadOnlyCollection<TaskItem>> GetAllTasks()
+    {
+        return Ok(_taskService.GetAllTasks());
     }
 }

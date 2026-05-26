@@ -16,4 +16,9 @@ public class TaskRepository
     {
         return _tasks.GetValueOrDefault(id);
     }
+
+    public IReadOnlyCollection<TaskItem> GetAll()
+    {
+        return [.. _tasks.Values];
+    }
 }
