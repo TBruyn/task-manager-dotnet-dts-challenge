@@ -49,8 +49,8 @@ public class TasksController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<IReadOnlyCollection<TaskItem>> GetAllTasks()
+    public ActionResult<IReadOnlyCollection<TaskMetadata>> GetAllTaskMetadata()
     {
-        return Ok(_taskService.GetAllTasks());
+        return Ok(_taskService.GetAllTaskmetaData());
     }
 }

@@ -22,8 +22,8 @@ public class TaskService
         return _taskRepository.GetById(id);
     }
 
-    public IReadOnlyCollection<TaskItem> GetAllTasks()
+    public IReadOnlyCollection<TaskMetadata> GetAllTaskmetaData()
     {
-        return _taskRepository.GetAll();
+        return _taskRepository.GetAllMetadata();
     }
 }

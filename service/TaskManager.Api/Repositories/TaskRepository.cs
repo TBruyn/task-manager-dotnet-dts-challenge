@@ -17,8 +17,8 @@ public class TaskRepository
         return _tasks.GetValueOrDefault(id);
     }
 
-    public IReadOnlyCollection<TaskItem> GetAll()
+    public IReadOnlyCollection<TaskMetadata> GetAllMetadata()
     {
-        return [.. _tasks.Values];
+        return [.. _tasks.Values.Select(task => TaskMetadata.FromTaskItem(task))];
     }
 }
